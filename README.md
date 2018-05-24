@@ -1,1 +1,1 @@
-# Java-MazeSolver
+# [Java] MazeSolver
