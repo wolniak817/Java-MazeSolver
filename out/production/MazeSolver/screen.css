@@ -1,0 +1,26 @@
+.wall{
+    -fx-background-color: black;
+}
+.path{
+    -fx-background-color: white;
+}
+.start{
+    -fx-background-color: yellow;
+}
+.end{
+    -fx-background-color: red;
+}
+.point{
+     -fx-background-color: blue;
+ }
+.win{
+    -fx-text-fill: green;
+}
+.good{
+    -fx-background-color: green;
+    -fx-text-fill: white;
+}
+.bad{
+    -fx-background-color: red;
+    -fx-text-fill: white;
+}
