@@ -61,11 +61,11 @@ public class Controller {
                 B4.setDisable(false);
                 infoField.getStyleClass().remove("bad");
                 infoField.getStyleClass().add("good");
-                infoField.setText("Poprawnie wczytano labirynt");
+                infoField.setText("The maze was correctly loaded");
             } catch (MazeCreationException e) {
                 infoField.getStyleClass().remove("good");
                 infoField.getStyleClass().add("bad");
-                infoField.setText("Błąd odczytu pliku");
+                infoField.setText("Error reading the file");
             }
 
         });
@@ -135,7 +135,7 @@ public class Controller {
     private void showMyPoint(){
             pieces[myPoint.getY()][myPoint.getX()].getStyleClass().add("point");
             if(myPoint.equals(mazeOrigin.getEndPoint())){
-                infoField.setText("UKONCZONO LABIRYNT");
+                infoField.setText("You reached the end of the maze");
                 generate.setDisable(false);
                 btnSolve.setDisable(true);
                 B1.setDisable(true);
