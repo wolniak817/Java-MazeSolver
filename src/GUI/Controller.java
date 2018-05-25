@@ -38,7 +38,7 @@ public class Controller {
     private Point startpoint;
     private Point myPoint;
     PointType[][] points;
-    TextField[][] pieces;
+    Label[][] pieces;
 
     public void initialize(){
         btnSolve.setDisable(true);
@@ -52,7 +52,7 @@ public class Controller {
                 mazeOrigin = new Maze(name.getText()+".txt");
                 points = mazeOrigin.getPoints();
                 myPoint = mazeOrigin.getStartPoint();
-                pieces = new TextField[points.length][points.length];
+                pieces = new Label[points.length][points.length];
                 displayMaze();
                 btnSolve.setDisable(false);
                 B1.setDisable(false);
@@ -150,22 +150,22 @@ public class Controller {
     private void displayMaze(){
         for (int i = 0;i<points.length;i++){
             for (int j = 0; j<points.length;j++){
-                TextField textField = new TextField();
-                textField.setMinWidth(20);
-                textField.setMinHeight(20);
-                textField.setPrefSize(20,20);
-                pieces[i][j] = textField;
+                Label labelField = new Label();
+                labelField.setMinWidth(20);
+                labelField.setMinHeight(20);
+                labelField.setPrefSize(20,20);
+                pieces[i][j] = labelField;
                 if (points[i][j] == PointType.WALL){
-                    textField.getStyleClass().add("wall");
+                    labelField.getStyleClass().add("wall");
                     grid.add(pieces[i][j],j,i);
                 }else if(points[i][j] == PointType.PATH){
-                    textField.getStyleClass().add("path");
+                    labelField.getStyleClass().add("path");
                     grid.add(pieces[i][j],j,i);
                 }else if (points[i][j] == PointType.START){
-                    textField.getStyleClass().add("start");
+                    labelField.getStyleClass().add("start");
                     grid.add(pieces[i][j],j,i);
                 }else if (points[i][j] == PointType.END){
-                    textField.getStyleClass().add("end");
+                    labelField.getStyleClass().add("end");
                     grid.add(pieces[i][j],j,i);
                 }
             }
